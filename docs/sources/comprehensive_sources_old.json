@@ -1,0 +1,179 @@
+[
+  {
+    "bookSourceComment": "破冰书源 - 128个优质书源合集",
+    "bookSourceGroup": "🔥 破冰书源",
+    "bookSourceName": "🌈土豆小说网",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://spudnovel.com",
+    "header": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0",
+    "searchUrl": "/site/list?q={{key}}",
+    "bookSourceComment": "luckparool/2025.5.27",
+    "exploreUrl": "[\\n {\\n \"title\": \"男生频道\",\\n \"url\": \" /site/list?sex=2&page={{page}}\"\\n },\\n {\\n \"title\": \"女生频道\",\\n \"url\": \" /site/list?sex=0&page={{page}}\"\\n },\\n {\\n \"title\": \"全本小说\",\\n \"url\": \" /site/list?finish=1&page={{page}}\"\\n },\\n {\\n \"title\": \"连载小说\",\\n \"url\": \" /site/list?finish=0&page={{page}}\"\\n }]",
+    "loginUi": "",
+    "loginUrl": "https://spudnovel.com/site/login",
+    "enabled": true,
+    "enabledExplore": true,
+    "lastUpdateTime": "1748345070993",
+    "ruleSearch": {
+      "checkKeyWord": "我的",
+      "bookList": "@css:.section1.inner ul li",
+      "name": "@css:h3 a@text",
+      "bookUrl": "@css:.book-img a@href||https://spudnovel.com",
+      "author": "@css:.book-info p.author:contains(作者：)@text##作者：##\u0001",
+      "kind": "@css:.book-info p.author span.type a@text[0]",
+      "wordCount": "@css:.book-info p.author span.author:first-child@text##\\\\d+",
+      "intro": "@css:.book-info p[style='float: left;']@text",
+      "coverUrl": "@css:.book-img img@src||https://spudnovel.com"
+    },
+    "ruleBookInfo": {
+      "author": "@css:.book-detail-info p:contains(作者：)@text##作者：##\u0001",
+      "name": "@css:.book-detail-info h2@text",
+      "wordCount": "@css:.book-detail-info p:contains(字数：)@text##字数：##\u0001",
+      "intro": "@css:.intro@text",
+      "tocUrl": "",
+      "coverUrl": "@css:.book-img img@src"
+    },
+    "ruleToc": {
+      "chapterList": "@css:.book-catalog.inner.mt20:has(h3) ul li",
+      "chapterName": "tag.a@text",
+      "chapterUrl": "tag.a@href||https://spudnovel.com",
+      "isVip": "false",
+      "isPay": "false"
+    },
+    "ruleContent": {
+      "title": "@css:.single-header .title@text",
+      "content": "@css:.entry-content p@textNodes##\\\\s*",
+      "nextContentUrl": "@css:nav.nav-single a[rel=next]@href"
+    },
+    "ruleReview": [],
+    "ruleExplore": {
+      "name": "@css:h3 a@text",
+      "author": "@css:.book-info p.author:contains(作者：)@text##作者：##\u0001",
+      "bookList": "@css:.section1.inner ul li",
+      "wordCount": "@css:.book-info p.author span.author:first-child@text##\\\\d+",
+      "intro": "@css:.book-info p[style='float: left;']@text",
+      "coverUrl": "@css:.book-img img@src||https://spudnovel.com",
+      "bookUrl": "@css:.book-img a@href||https://spudnovel.com"
+    }
+  },
+  {
+    "bookSourceComment": "shidahuilang书源 - 110个优质书源合集",
+    "bookSourceGroup": "🔥 shidahuilang",
+    "bookSourceName": "🌈八叉书库",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://八叉书库.luoyacheng.ip-ddns.com",
+    "bookUrlPattern": "https://www.+/book/\\\\d+\\\\.html",
+    "concurrentRate": "1000",
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\\nlet banben=\"1.7.9\";\\nftsm();\\neval(String(source.loginUrl));\\nlet surl = `{{\\t(\\nsource.getVariable()+''||cache.get('8xbl1')+''\\n).replace(/\\\\\\\\/$/,'')}}`",
+    "header": "@js:\\n(()=>{\\n let nn = String(source.getVariable());\\n let ck=source.getLoginHeader()||'';\\n ck=cookie.getCookie(nn);\\n let headers = {\\n \\t'User-Agent': ua,\\n \\t'x-requested-with': x_r_w,\\n \\t'sec-ch-ua': s_c_u,\\n \\t'sec-ch-ua-platform': s_c_u_p,\\n \\t'Accept-language': \"zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6\",\\n \\t'Referer': nn,\\n \\t'Cookie': ck\\n \\t };\\n \\treturn JSON.stringify(headers);\\n})();",
+    "lastUpdateTime": 1687222326794,
+    "respondTime": 9969,
+    "ruleBookInfo": {
+      "author": "$.Author",
+      "coverUrl": "https://imgapixs.pysmei.com/BookFiles/BookImages/{$.Img}",
+      "intro": "$.Desc@put:{bid:$.Id}",
+      "kind": "$.LastTime&&$.CName&&$.BookStatus&&{$.Score}分",
+      "lastChapter": "$.LastChapter",
+      "name": "$.Name",
+      "tocUrl": "java.put('cid',Math.floor({{$.Id}}/1000)+1)https://infosxs.pysmei.com/BookFiles/Html/{{result}}/{{$.Id}}/index.html"
+    },
+    "ruleContent": {
+      "content": "$..content\\n##你正在使用.*敬请见谅。@js:\\nif(result.match(/{{}\\\\}/)){\\neval(String(source.bookSourceComment));\\n\\t\\tresult = decode(result);\\n\\t}\\nresult",
+      "nextContentUrl": "",
+      "replaceRegex": "##|千千.*最新章节！||zt0G|.*第.*章.*|\\\\~经\\\\^\\\\^小\\\\！说\\\\レ|首发\\\\]|永久网址.*请牢记！",
+      "sourceRegex": ""
+    },
+    "ruleExplore": {
+      "author": "$.Author",
+      "bookList": "$..BookList[*]",
+      "bookUrl": "java.put('cid',Math.floor({{$.Id}}/1000)+1)https://infosxs.pysmei.com/BookFiles/Html/{{result}}/{{$.Id}}/info.html",
+      "coverUrl": "https://imgapixs.pysmei.com/BookFiles/BookImages/{$.Img}",
+      "intro": "$.Desc",
+      "kind": "{{$.BookStatus}}\\n{{$.CName&&}}\\n{{$.Score}}分",
+      "lastChapter": "$.LastChapter",
+      "name": "$.Name"
+    },
+    "ruleReview": {},
+    "ruleSearch": {
+      "author": "$.Author",
+      "bookList": "$.data[*]",
+      "bookUrl": "java.put('cid',Math.floor({{$.Id}}/1000)+1)https://infosxs.pysmei.com/BookFiles/Html/{{result}}/{{$.Id}}/info.html",
+      "checkKeyWord": "万族之劫",
+      "coverUrl": "$.Img",
+      "intro": "$.Desc",
+      "kind": "$.UpdateTime&&$.BookStatus&&$.CName",
+      "lastChapter": "$.LastChapter",
+      "name": "$.Name",
+      "wordCount": ""
+    },
+    "ruleToc": {
+      "chapterList": "$..list[*].list[*]",
+      "chapterName": "$.name@js:\\nif(result.match(/{{}\\\\}/)){\\neval(String(source.bookSourceComment));\\n\\t\\tresult = decode(result);\\n\\t}\\nresult",
+      "chapterUrl": "https://contentxs.pysmei.com/BookFiles/Html/@get:{cid}/@get:{bid}/{{$.id}}.html"
+    },
+    "searchUrl": "https://souxs.leeyegy.com/search.aspx?key={{key}}&page={{page}}&siteid=app2",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "酷安@三舞313书源 - 1554个书源超大合集",
+    "bookSourceGroup": "🔥 三舞313",
+    "bookSourceName": "9x阅读器",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://novel-api.elklk.cn/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[\\n{\"title\": \"❀全部分类❀\",\"url\": \"\",\"style\": {\"layout_flexGrow\": 0,\\n\"layout_flexBasisPercent\": 1,\\n\"layout_wrapBefore\": false\\n}},\\n{\"title\": \"玄幻\",\"url\": \"\",\\n\"style\": {\"layout_flexGrow\": 0,\\n\"layout_flexBasisPercent\": 1\\n}},\\n{\"title\": \"最热\",\"url\": \"/cdn/category/rankList/1/1/auire/all/{{page}}.html\",\\n\"style\": {\"layout_flexGrow\": 0.25,\\n\"layout_flexBasisPercent\": -1\\n}},\\n{\"title\": \"最新\",\"url\": \"/cdn/category/rankList/1/1/xinshu/all/{{page}}.html\",\\n\"style\": {\"layout_flexGrow\": 0.25,\\n\"layout_flexBasisPercent\": -1\\n}}]",
+    "header": "",
+    "lastUpdateTime": 1684806358563,
+    "loginUrl": "",
+    "respondTime": 1504,
+    "ruleBookInfo": {
+      "author": "$.author",
+      "canReName": "",
+      "coverUrl": "$.icon",
+      "init": "$.result.book",
+      "intro": "$.description",
+      "kind": "{{java.timeFormat(java.getString('$.mtime')*1000)}}\\n{{$.category}}",
+      "lastChapter": "$.new_title",
+      "name": "$.name@put:{bid:id}",
+      "tocUrl": "/cdn/book/chapterList/{{$.id}}.html",
+      "wordCount": ""
+    },
+    "ruleContent": {
+      "content": "$..content##你正在使用.*敬请见谅。@js:\\nif(result.match(/{{}\\\\}/)){\\neval(String(source.bookSourceComment));\\n\\t\\tresult = decode(result);\\n\\t}\\nresult",
+      "replaceRegex": "##|千千.*最新章节！||zt0G|.*第.*章.*|\\\\~经\\\\^\\\\^小\\\\！说\\\\レ|首发\\\\]|永久网址.*请牢记！"
+    },
+    "ruleExplore": {
+      "author": "$.author",
+      "bookList": "$..list[*]",
+      "bookUrl": "/api/book-info?id={{$.id}}&source_id=1",
+      "coverUrl": "$.icon",
+      "intro": "$.description",
+      "kind": "$.category",
+      "name": "$.name"
+    },
+    "ruleSearch": {
+      "author": "$.author",
+      "bookList": "$..list[*]",
+      "bookUrl": "/api/book-info?id={{$.id}}&source_id=1",
+      "checkKeyWord": "万族之劫",
+      "coverUrl": "$.icon",
+      "intro": "$.description",
+      "kind": "$.category",
+      "lastChapter": "",
+      "name": "$.name"
+    },
+    "ruleToc": {
+      "chapterList": "$.result.list..list[*]",
+      "chapterName": "$.name@js:\\nif(result.match(/{{}\\\\}/)){\\neval(String(source.bookSourceComment));\\n\\t\\tresult = decode(result);\\n\\t}\\nresult",
+      "chapterUrl": "/cdn/book/content/@get:{bid}/{{$.id}}.html"
+    },
+    "searchUrl": "/api/category-search?name={{key}}",
+    "weight": 0
+  }
+]

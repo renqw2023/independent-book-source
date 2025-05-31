@@ -1,0 +1,135 @@
+[
+  {
+    "bookSourceName": "🍅番茄小说",
+    "bookSourceUrl": "https://fanqienovel.com",
+    "bookSourceType": 0,
+    "enabled": true,
+    "bookSourceGroup": "免费小说",
+    "bookSourceComment": "番茄小说 - 字节跳动旗下免费小说平台\\n✅ 完全免费\\n✅ 海量资源\\n✅ 更新及时\\n✅ 无广告干扰\\n\\n注意：此为简化版书源，仅供测试使用",
+    "lastUpdateTime": 1704067200000,
+    "searchUrl": "https://fanqienovel.com/search?q={{key}}",
+    "exploreUrl": "https://fanqienovel.com/category/all",
+    "ruleSearch": {
+      "bookList": ".book-item",
+      "name": ".book-title@text",
+      "author": ".book-author@text",
+      "bookUrl": ".book-link@href",
+      "coverUrl": ".book-cover@src",
+      "intro": ".book-intro@text",
+      "kind": ".book-category@text",
+      "wordCount": ".book-words@text",
+      "lastChapter": ".book-latest@text"
+    },
+    "ruleBookInfo": {
+      "name": ".book-title@text",
+      "author": ".book-author@text",
+      "intro": ".book-intro@text",
+      "kind": ".book-category@text",
+      "coverUrl": ".book-cover@src",
+      "tocUrl": ".toc-link@href",
+      "wordCount": ".book-words@text",
+      "lastChapter": ".book-latest@text"
+    },
+    "ruleToc": {
+      "chapterList": ".chapter-item",
+      "chapterName": ".chapter-title@text",
+      "chapterUrl": ".chapter-link@href",
+      "isVip": "false",
+      "isPay": "false"
+    },
+    "ruleContent": {
+      "content": ".chapter-content@text",
+      "title": ".chapter-title@text"
+    },
+    "ruleExplore": {
+      "bookList": ".book-item",
+      "name": ".book-title@text",
+      "author": ".book-author@text",
+      "bookUrl": ".book-link@href",
+      "coverUrl": ".book-cover@src",
+      "intro": ".book-intro@text",
+      "kind": ".book-category@text",
+      "wordCount": ".book-words@text"
+    },
+    "header": "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36\\nReferer: https://fanqienovel.com/",
+    "loginUrl": "",
+    "loginUi": "",
+    "loginCheckJs": "",
+    "coverDecodeJs": "",
+    "variableComment": "番茄小说简化版书源\\n注意：此版本使用网页解析，可能不如API版本稳定",
+    "respondTime": 30000,
+    "weight": 100,
+    "customOrder": 1,
+    "enabledExplore": true,
+    "enabledCookieJar": false,
+    "concurrentRate": "1000",
+    "bookUrlPattern": ""
+  },
+  {
+    "bookSourceName": "📖笔趣阁",
+    "bookSourceUrl": "https://www.biquge.com.cn",
+    "bookSourceType": 0,
+    "enabled": true,
+    "bookSourceGroup": "免费小说",
+    "bookSourceComment": "笔趣阁 - 经典免费小说网站\\n✅ 完全免费\\n✅ 资源丰富\\n✅ 更新稳定\\n✅ 兼容性好",
+    "lastUpdateTime": 1704067200000,
+    "searchUrl": "/search.php?keyword={{key}}",
+    "exploreUrl": "/sort/1_{{page}}.html",
+    "ruleSearch": {
+      "bookList": ".result-list .result-item",
+      "name": ".result-game-item-title-link@text",
+      "author": ".result-game-item-info-tag:nth-child(1)@text##作者：",
+      "bookUrl": ".result-game-item-title-link@href",
+      "coverUrl": ".result-game-item-pic-link img@src",
+      "intro": ".result-game-item-desc@text",
+      "kind": ".result-game-item-info-tag:nth-child(2)@text##分类：",
+      "wordCount": ".result-game-item-info-tag:nth-child(3)@text##字数：",
+      "lastChapter": ".result-game-item-info-tag:nth-child(4)@text##最新："
+    },
+    "ruleBookInfo": {
+      "name": "#info h1@text",
+      "author": "#info p:nth-child(2)@text##作\\s*者：",
+      "intro": "#intro@text",
+      "kind": "#info p:nth-child(3)@text##分\\s*类：",
+      "coverUrl": "#fmimg img@src",
+      "tocUrl": "",
+      "wordCount": "#info p:nth-child(4)@text##字\\s*数：",
+      "lastChapter": "#info p:nth-child(5)@text##最新："
+    },
+    "ruleToc": {
+      "chapterList": "#list dd",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href",
+      "isVip": "false",
+      "isPay": "false"
+    },
+    "ruleContent": {
+      "content": "#content@text##笔趣阁.*?最快更新|www\\.biquge\\.com\\.cn|一秒记住.*?为您提供精彩小说阅读",
+      "title": ".bookname h1@text"
+    },
+    "ruleExplore": {
+      "bookList": ".novelslist2 li",
+      "name": ".s2@text",
+      "author": ".s4@text",
+      "bookUrl": ".s2 a@href",
+      "coverUrl": "",
+      "intro": ".s3@text",
+      "kind": ".s1@text",
+      "wordCount": "",
+      "lastChapter": ".s3@text"
+    },
+    "header": "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+    "loginUrl": "",
+    "loginUi": "",
+    "loginCheckJs": "",
+    "coverDecodeJs": "",
+    "variableComment": "笔趣阁经典书源\\n使用网页解析，稳定可靠",
+    "respondTime": 30000,
+    "weight": 90,
+    "customOrder": 2,
+    "enabledExplore": true,
+    "enabledCookieJar": false,
+    "concurrentRate": "500",
+    "bookUrlPattern": ""
+  }
+]

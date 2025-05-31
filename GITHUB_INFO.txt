@@ -1,0 +1,5 @@
+GitHub用户名: renqw2023
+仓库地址: https://github.com/renqw2023/independent-book-source
+网站地址: https://renqw2023.github.io/independent-book-source/
+书源链接: https://renqw2023.github.io/independent-book-source/sources/legado_sources.json
+订阅链接: https://renqw2023.github.io/independent-book-source/sources/subscription.json

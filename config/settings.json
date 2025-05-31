@@ -1,0 +1,103 @@
+{
+  "network": {
+    "timeout": 30,
+    "retry_times": 3,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+    "proxy": null,
+    "max_connections": 100,
+    "max_connections_per_host": 30,
+    "dns_cache_ttl": 300,
+    "enable_dns_cache": true
+  },
+  
+  "cache": {
+    "enabled": true,
+    "expire_time": 3600,
+    "max_size": 1000,
+    "cache_dir": "data/cache",
+    "file_cache": true,
+    "db_cache": true,
+    "cleanup_interval": 300
+  },
+  
+  "rules": {
+    "js_timeout": 5000,
+    "max_depth": 10,
+    "enable_js": true,
+    "enable_xpath": true,
+    "enable_css": true,
+    "enable_regex": true,
+    "enable_json_path": true
+  },
+  
+  "output": {
+    "format": "legado",
+    "merge_sources": true,
+    "output_dir": "output",
+    "individual_files": true,
+    "pretty_print": true,
+    "backup_old_files": true
+  },
+  
+  "logging": {
+    "level": "INFO",
+    "file": "data/logs/engine.log",
+    "max_size": "10MB",
+    "backup_count": 5,
+    "console_output": true,
+    "file_output": true,
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  },
+  
+  "security": {
+    "enable_content_filter": true,
+    "max_content_length": 1048576,
+    "allowed_domains": [],
+    "blocked_domains": [],
+    "enable_ssl_verify": true,
+    "max_redirects": 10
+  },
+  
+  "performance": {
+    "concurrent_requests": 10,
+    "request_delay": 0.1,
+    "batch_size": 50,
+    "enable_compression": true,
+    "connection_pool_size": 100
+  },
+  
+  "sources": {
+    "auto_register": true,
+    "enabled_sources": [
+      "fanqie",
+      "qimao", 
+      "dejian",
+      "tadu",
+      "qq",
+      "xiaomi",
+      "panda",
+      "qidian",
+      "ximalaya"
+    ],
+    "test_keyword": "测试",
+    "update_check_interval": 86400,
+    "auto_update": false
+  },
+  
+  "api": {
+    "enable_web_api": false,
+    "host": "127.0.0.1",
+    "port": 8080,
+    "cors_enabled": true,
+    "rate_limit": 100,
+    "auth_required": false
+  },
+  
+  "debug": {
+    "enable_debug": false,
+    "save_requests": false,
+    "save_responses": false,
+    "debug_dir": "data/debug",
+    "verbose_logging": false
+  }
+}

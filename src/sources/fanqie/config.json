@@ -1,0 +1,78 @@
+{
+  "bookSourceName": "🍅番茄小说",
+  "bookSourceUrl": "https://fanqienovel.com",
+  "bookSourceType": 0,
+  "bookSourceGroup": "免费小说",
+  "bookSourceComment": "番茄小说 - 字节跳动旗下免费小说平台\n✅ 完全免费\n✅ 海量资源\n✅ 更新及时\n✅ 无广告干扰",
+  "enabled": true,
+  "enabledExplore": true,
+  "enabledCookieJar": false,
+  "concurrentRate": "1000",
+  "customOrder": 1,
+  "lastUpdateTime": 1704067200000,
+  "respondTime": 180000,
+  "weight": 100,
+  
+  "searchUrl": "/api/author/search/search_book/v1/?query={{key}}&aid=1967&channel=0&os_version=0&device_type=0&device_brand=0&language=zh&version_code=999&_signature={{signature}}&msToken={{msToken}}",
+  
+  "exploreUrl": "[\n  {\n    \"title\": \"男生热门\",\n    \"url\": \"/api/author/library/book_list/v1/?gender=1&category_id=0&creation_status=0&word_count=0&sort=0&page={{page}}&aid=1967&channel=0&os_version=0&device_type=0&device_brand=0&language=zh&version_code=999&_signature={{signature}}&msToken={{msToken}}\",\n    \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.5}\n  },\n  {\n    \"title\": \"女生热门\",\n    \"url\": \"/api/author/library/book_list/v1/?gender=2&category_id=0&creation_status=0&word_count=0&sort=0&page={{page}}&aid=1967&channel=0&os_version=0&device_type=0&device_brand=0&language=zh&version_code=999&_signature={{signature}}&msToken={{msToken}}\",\n    \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.5}\n  },\n  {\n    \"title\": \"都市小说\",\n    \"url\": \"/api/author/library/book_list/v1/?gender=0&category_id=1&creation_status=0&word_count=0&sort=0&page={{page}}&aid=1967&channel=0&os_version=0&device_type=0&device_brand=0&language=zh&version_code=999&_signature={{signature}}&msToken={{msToken}}\",\n    \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}\n  },\n  {\n    \"title\": \"玄幻小说\",\n    \"url\": \"/api/author/library/book_list/v1/?gender=0&category_id=7&creation_status=0&word_count=0&sort=0&page={{page}}&aid=1967&channel=0&os_version=0&device_type=0&device_brand=0&language=zh&version_code=999&_signature={{signature}}&msToken={{msToken}}\",\n    \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}\n  },\n  {\n    \"title\": \"现代言情\",\n    \"url\": \"/api/author/library/book_list/v1/?gender=0&category_id=3&creation_status=0&word_count=0&sort=0&page={{page}}&aid=1967&channel=0&os_version=0&device_type=0&device_brand=0&language=zh&version_code=999&_signature={{signature}}&msToken={{msToken}}\",\n    \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}\n  },\n  {\n    \"title\": \"古代言情\",\n    \"url\": \"/api/author/library/book_list/v1/?gender=0&category_id=5&creation_status=0&word_count=0&sort=0&page={{page}}&aid=1967&channel=0&os_version=0&device_type=0&device_brand=0&language=zh&version_code=999&_signature={{signature}}&msToken={{msToken}}\",\n    \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}\n  }\n]",
+  
+  "ruleSearch": {
+    "bookList": "$.data.search_book_data[*]",
+    "name": "$.book_name",
+    "author": "$.author",
+    "bookUrl": "$.book_id@js:result = 'https://fanqienovel.com/page/' + result",
+    "coverUrl": "$.thumb_url",
+    "intro": "$.abstract",
+    "kind": "$.category",
+    "wordCount": "$.word_count",
+    "lastChapter": "$.last_chapter_title"
+  },
+  
+  "ruleBookInfo": {
+    "name": "$.data.book_name",
+    "author": "$.data.author",
+    "intro": "$.data.abstract",
+    "kind": "$.data.category",
+    "coverUrl": "$.data.thumb_url",
+    "tocUrl": "$.data.book_id@js:result = '/api/author/library/chapter_list/v1/?book_id=' + result + '&aid=1967&channel=0&os_version=0&device_type=0&device_brand=0&language=zh&version_code=999'",
+    "wordCount": "$.data.word_count",
+    "lastChapter": "$.data.last_chapter_info.chapter_title"
+  },
+  
+  "ruleToc": {
+    "chapterList": "$.data.chapter_data[*]",
+    "chapterName": "$.chapter_title",
+    "chapterUrl": "$.chapter_id@js:result = '/api/author/library/chapter/v1/?book_id=' + java.get('book_id') + '&chapter_id=' + result + '&aid=1967&channel=0&os_version=0&device_type=0&device_brand=0&language=zh&version_code=999'",
+    "isVip": "false",
+    "isPay": "false"
+  },
+  
+  "ruleContent": {
+    "content": "$.data.content@js:result = result.replace(/\\n/g, '\\n\\n')",
+    "title": "$.data.chapter_title"
+  },
+  
+  "ruleExplore": {
+    "bookList": "$.data.book_data[*]",
+    "name": "$.book_name",
+    "author": "$.author",
+    "bookUrl": "$.book_id@js:result = 'https://fanqienovel.com/page/' + result",
+    "coverUrl": "$.thumb_url",
+    "intro": "$.abstract",
+    "kind": "$.category",
+    "wordCount": "$.word_count"
+  },
+  
+  "header": "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36\nReferer: https://fanqienovel.com/",
+  
+  "loginUrl": "",
+  "loginUi": "",
+  "loginCheckJs": "",
+  "coverDecodeJs": "",
+  "variableComment": "番茄小说API参数说明：\n- aid: 应用ID，固定为1967\n- channel: 渠道号，默认为0\n- signature: 请求签名，需要动态生成\n- msToken: 用户令牌，可为空",
+  
+  "version": "1.0.0",
+  "author": "大灰狼开发团队",
+  "update_url": "https://github.com/your-repo/independent-book-source/raw/main/src/sources/fanqie/config.json"
+}

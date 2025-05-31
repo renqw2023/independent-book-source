@@ -1,0 +1,20 @@
+# 最小依赖包 - 用于快速测试
+# Minimal Dependencies - For Quick Testing
+
+# 核心依赖
+aiohttp>=3.8.0
+asyncio>=3.4.3
+requests>=2.28.0
+
+# HTML解析
+beautifulsoup4>=4.11.0
+lxml>=4.9.0
+
+# JSON处理
+jsonpath-ng>=1.5.3
+
+# JavaScript执行（可选）
+js2py>=0.74
+
+# 基础工具
+chardet>=5.0.0

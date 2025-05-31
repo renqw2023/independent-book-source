@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Allow access to all book source files
+Allow: /sources/
+Allow: /api/
+
+# Sitemap location
+Sitemap: https://renqw2023.github.io/independent-book-source/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

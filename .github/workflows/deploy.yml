@@ -1,0 +1,151 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # 每天UTC时间00:00自动更新（北京时间08:00）
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests beautifulsoup4 lxml jsonpath-ng
+        
+    - name: Update book sources
+      run: |
+        echo "更新书源数据..."
+        python -c "
+        import json
+        import os
+        from datetime import datetime
+        
+        # 更新API数据的时间戳
+        api_file = 'api/sources.json'
+        if os.path.exists(api_file):
+            with open(api_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            data['meta']['last_updated'] = datetime.now().strftime('%Y-%m-%d')
+            
+            with open(api_file, 'w', encoding='utf-8') as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+            
+            print('API数据已更新')
+        "
+        
+    - name: Validate book sources
+      run: |
+        echo "验证书源文件..."
+        python -c "
+        import json
+        import os
+
+        source_files = [
+            'docs/sources/comprehensive_sources.json',
+            'docs/sources/premium_sources.json',
+            'docs/sources/jjwxc_sources.json',
+            'docs/sources/fanqie_collection.json',
+            'docs/sources/legado_sources.json'
+        ]
+
+        valid_files = 0
+        for file_path in source_files:
+            if os.path.exists(file_path):
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                    print(f'✅ {file_path} - 有效的JSON文件，包含 {len(data)} 个书源')
+                    valid_files += 1
+                except json.JSONDecodeError as e:
+                    print(f'❌ {file_path} - JSON格式错误: {e}')
+                    # 不退出，继续验证其他文件
+            else:
+                print(f'⚠️ {file_path} - 文件不存在')
+
+        if valid_files == 0:
+            print('⚠️ 没有找到有效的书源文件，但不影响部署')
+        else:
+            print(f'✅ 验证完成，找到 {valid_files} 个有效的书源文件')
+        "
+        
+    - name: Generate sitemap
+      run: |
+        echo "生成站点地图..."
+        cat > sitemap.xml << 'EOF'
+        <?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+          <url>
+            <loc>https://renqw2023.github.io/independent-book-source/</loc>
+            <lastmod>$(date -u +%Y-%m-%d)</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>1.0</priority>
+          </url>
+          <url>
+            <loc>https://renqw2023.github.io/independent-book-source/mobile.html</loc>
+            <lastmod>$(date -u +%Y-%m-%d)</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.8</priority>
+          </url>
+          <url>
+            <loc>https://renqw2023.github.io/independent-book-source/api/sources.json</loc>
+            <lastmod>$(date -u +%Y-%m-%d)</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.9</priority>
+          </url>
+        </urlset>
+        EOF
+        
+    - name: Create robots.txt
+      run: |
+        cat > robots.txt << 'EOF'
+        User-agent: *
+        Allow: /
+        
+        Sitemap: https://renqw2023.github.io/independent-book-source/sitemap.xml
+        EOF
+        
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.'
+        
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4

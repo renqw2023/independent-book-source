@@ -1,0 +1,55 @@
+title: 独立书源系统
+description: 免费、开源、全面的legado阅读书源解决方案
+url: https://renqw2023.github.io
+baseurl: /independent-book-source
+
+# GitHub Pages settings
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+  - .github/
+
+# Include files
+include:
+  - api/
+  - sources/
+
+# Site settings
+lang: zh-CN
+timezone: Asia/Shanghai
+
+# SEO settings
+author: renqw2023
+twitter:
+  username: renqw2023
+  card: summary
+
+social:
+  name: 独立书源系统
+  links:
+    - https://github.com/renqw2023/independent-book-source
+
+# Google Analytics (optional)
+# google_analytics: UA-XXXXXXXX-X
+
+# Theme settings
+theme: minima
+
+# Custom variables
+collections:
+  sources:
+    output: true
+    permalink: /:collection/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "sources"
+    values:
+      layout: "source"

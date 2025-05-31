@@ -1,0 +1,93 @@
+# 独立书源系统依赖包
+# Independent Book Source System Dependencies
+
+# 核心依赖 - Core Dependencies
+aiohttp>=3.8.0              # 异步HTTP客户端
+asyncio>=3.4.3              # 异步编程支持
+requests>=2.28.0            # HTTP请求库（备用）
+
+# HTML/XML解析 - HTML/XML Parsing
+beautifulsoup4>=4.11.0      # HTML解析库
+lxml>=4.9.0                 # XML/HTML解析器
+html5lib>=1.1               # HTML5解析器
+pyquery>=1.4.3              # jQuery风格的HTML解析
+
+# JSON处理 - JSON Processing
+jsonpath-ng>=1.5.3          # JSONPath查询
+ujson>=5.4.0                # 快速JSON解析器
+
+# JavaScript执行 - JavaScript Execution
+js2py>=0.74                 # JavaScript执行引擎
+PyV8>=1.0.0                 # V8 JavaScript引擎（可选）
+
+# 加密解密 - Cryptography
+cryptography>=37.0.0        # 加密库
+pycryptodome>=3.15.0        # 加密算法
+hashlib                     # 哈希算法（内置）
+
+# 数据库 - Database
+sqlite3                     # SQLite数据库（内置）
+
+# 文本处理 - Text Processing
+chardet>=5.0.0              # 字符编码检测
+regex>=2022.7.9             # 正则表达式增强
+
+# 网络工具 - Network Tools
+urllib3>=1.26.0             # URL处理工具
+certifi>=2022.6.15          # SSL证书
+
+# 日志处理 - Logging
+colorlog>=6.6.0             # 彩色日志输出
+
+# 配置管理 - Configuration
+pyyaml>=6.0                 # YAML配置文件支持
+toml>=0.10.2                # TOML配置文件支持
+
+# 时间处理 - Time Processing
+python-dateutil>=2.8.2     # 日期时间处理
+
+# 文件处理 - File Processing
+pathlib                     # 路径处理（内置）
+shutil                      # 文件操作（内置）
+
+# 开发工具 - Development Tools
+pytest>=7.1.0              # 测试框架
+pytest-asyncio>=0.19.0     # 异步测试支持
+black>=22.6.0               # 代码格式化
+flake8>=5.0.0               # 代码检查
+mypy>=0.971                 # 类型检查
+
+# 性能监控 - Performance Monitoring
+psutil>=5.9.0               # 系统性能监控
+memory-profiler>=0.60.0     # 内存使用分析
+
+# Web框架（可选）- Web Framework (Optional)
+fastapi>=0.79.0             # Web API框架
+uvicorn>=0.18.0             # ASGI服务器
+starlette>=0.19.0           # Web框架核心
+
+# 图像处理（可选）- Image Processing (Optional)
+pillow>=9.2.0               # 图像处理库
+opencv-python>=4.6.0       # 计算机视觉库
+
+# 数据分析（可选）- Data Analysis (Optional)
+pandas>=1.4.0               # 数据分析库
+numpy>=1.23.0               # 数值计算库
+
+# 其他工具 - Other Tools
+tqdm>=4.64.0                # 进度条显示
+click>=8.1.0                # 命令行工具
+rich>=12.5.0                # 富文本显示
+
+# 平台特定依赖 - Platform Specific
+# Windows
+pywin32>=304; sys_platform == "win32"
+
+# Linux/Unix
+python-magic>=0.4.27; sys_platform != "win32"
+
+# 可选的高性能依赖 - Optional High Performance Dependencies
+# 注意：这些依赖可能需要编译，安装可能较复杂
+# cchardet>=2.1.7           # 快速字符编码检测
+# orjson>=3.7.0             # 快速JSON处理
+# uvloop>=0.16.0            # 高性能事件循环（仅Linux/macOS）
