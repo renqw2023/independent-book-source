@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>独立书源系统 - 免费legado书源 - 1800+书源</title>
+    <title>独立书源系统 - 免费legado书源</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
@@ -18,37 +18,37 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        
+
         .header {
             text-align: center;
             color: white;
             margin-bottom: 40px;
         }
-        
+
         .header h1 {
             font-size: 3rem;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        
+
         .header p {
             font-size: 1.2rem;
             opacity: 0.9;
         }
-        
+
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-bottom: 40px;
         }
-        
+
         .stat-card {
             background: rgba(255,255,255,0.1);
             backdrop-filter: blur(10px);
@@ -58,20 +58,20 @@
             color: white;
             border: 1px solid rgba(255,255,255,0.2);
         }
-        
+
         .stat-number {
             font-size: 2.5rem;
             font-weight: bold;
             margin-bottom: 5px;
         }
-        
+
         .sources-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 25px;
             margin-bottom: 40px;
         }
-        
+
         .source-card {
             background: white;
             border-radius: 15px;
@@ -79,39 +79,39 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .source-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
-        
+
         .source-header {
             display: flex;
             align-items: center;
             margin-bottom: 15px;
         }
-        
+
         .source-icon {
             font-size: 2rem;
             margin-right: 10px;
         }
-        
+
         .source-title {
             font-size: 1.3rem;
             font-weight: bold;
             color: #2c3e50;
         }
-        
+
         .source-description {
             color: #666;
             margin-bottom: 15px;
             line-height: 1.5;
         }
-        
+
         .source-features {
             margin-bottom: 20px;
         }
-        
+
         .feature-tag {
             display: inline-block;
             background: #e3f2fd;
@@ -121,7 +121,7 @@
             font-size: 0.8rem;
             margin: 2px;
         }
-        
+
         .source-url {
             background: #f8f9fa;
             border: 1px solid #e9ecef;
@@ -132,7 +132,7 @@
             word-break: break-all;
             margin-bottom: 15px;
         }
-        
+
         .copy-btn {
             background: #007bff;
             color: white;
@@ -143,15 +143,15 @@
             font-size: 0.9rem;
             transition: background 0.3s ease;
         }
-        
+
         .copy-btn:hover {
             background: #0056b3;
         }
-        
+
         .copy-btn.copied {
             background: #28a745;
         }
-        
+
         .instructions {
             background: white;
             border-radius: 15px;
@@ -159,19 +159,19 @@
             margin-bottom: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        
+
         .instructions h2 {
             color: #2c3e50;
             margin-bottom: 20px;
             font-size: 1.5rem;
         }
-        
+
         .step {
             margin-bottom: 15px;
             padding-left: 30px;
             position: relative;
         }
-        
+
         .step::before {
             content: counter(step-counter);
             counter-increment: step-counter;
@@ -189,27 +189,27 @@
             font-size: 0.8rem;
             font-weight: bold;
         }
-        
+
         .instructions ol {
             counter-reset: step-counter;
         }
-        
+
         .footer {
             text-align: center;
             color: white;
             opacity: 0.8;
             margin-top: 40px;
         }
-        
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2rem;
             }
-            
+
             .sources-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .container {
                 padding: 15px;
             }
@@ -221,16 +221,15 @@
         <div class="header">
             <h1>📚 独立书源系统</h1>
             <p>免费、开源、全面的legado阅读书源解决方案</p>
-            <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 10px;">最后更新: 2024-05-31 20:30</p>
         </div>
-        
+
         <div class="stats">
             <div class="stat-card">
-                <div class="stat-number">2680+</div>
-                <div>总书源数量</div>
+                <div class="stat-number">703+</div>
+                <div>验证有效书源</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">7</div>
+                <div class="stat-number">8</div>
                 <div>书源合集</div>
             </div>
             <div class="stat-card">
@@ -242,7 +241,7 @@
                 <div>在线服务</div>
             </div>
         </div>
-        
+
         <div class="instructions">
             <h2>📖 使用方法</h2>
             <ol>
@@ -254,68 +253,28 @@
                 <li class="step">点击"确定"完成导入</li>
             </ol>
         </div>
-        
+
         <div class="sources-grid">
-            <div class="source-card">
-                <div class="source-header">
-                    <div class="source-icon">🌟</div>
-                    <div class="source-title">aoaostar全量合集 (推荐)</div>
-                </div>
-                <div class="source-description">
-                    来自legado.aoaostar.com的优质书源合集，包含2680个去重后的高质量书源，涵盖各大小说平台。
-                </div>
-                <div class="source-features">
-                    <span class="feature-tag">2680个书源</span>
-                    <span class="feature-tag">去重优化</span>
-                    <span class="feature-tag">最新版本</span>
-                    <span class="feature-tag">强烈推荐</span>
-                </div>
-                <div class="source-url" id="aoaostar-all-url">
-                    https://raw.githubusercontent.com/renqw2023/independent-book-source/main/docs/sources/aoaostar_sources/merged_all_sources.json
-                </div>
-                <button class="copy-btn" onclick="copyToClipboard('aoaostar-all-url', this)">复制链接</button>
-            </div>
-
-            <div class="source-card">
-                <div class="source-header">
-                    <div class="source-icon">💎</div>
-                    <div class="source-title">XIU2精品书源</div>
-                </div>
-                <div class="source-description">
-                    精选31个高质量书源，包含起点中文、番茄小说等知名平台，经过严格筛选的精品书源。
-                </div>
-                <div class="source-features">
-                    <span class="feature-tag">31个书源</span>
-                    <span class="feature-tag">精品推荐</span>
-                    <span class="feature-tag">稳定可靠</span>
-                    <span class="feature-tag">新手首选</span>
-                </div>
-                <div class="source-url" id="xiu2-url">
-                    https://raw.githubusercontent.com/renqw2023/independent-book-source/main/docs/sources/aoaostar_sources/XIU2____.json
-                </div>
-                <button class="copy-btn" onclick="copyToClipboard('xiu2-url', this)">复制链接</button>
-            </div>
-
             <div class="source-card">
                 <div class="source-header">
                     <div class="source-icon">🔥</div>
                     <div class="source-title">综合书源合集</div>
                 </div>
                 <div class="source-description">
-                    包含5个精选优质书源，涵盖番茄小说、晋江文学城、起点中文网等知名平台，经过测试验证的可靠书源。
+                    包含超过703个验证有效书源，涵盖aoaostar全量书源、破冰、shidahuilang、三舞313、XIU2精品等知名书源合集，是最全面的书源解决方案。
                 </div>
                 <div class="source-features">
-                    <span class="feature-tag">5个书源</span>
-                    <span class="feature-tag">精选优质</span>
-                    <span class="feature-tag">测试验证</span>
+                    <span class="feature-tag">703+书源</span>
+                    <span class="feature-tag">验证有效</span>
+                    <span class="feature-tag">社区验证</span>
                     <span class="feature-tag">推荐新手</span>
                 </div>
                 <div class="source-url" id="comprehensive-url">
-                    https://raw.githubusercontent.com/renqw2023/independent-book-source/main/docs/sources/comprehensive_sources.json
+                    https://raw.githubusercontent.com/renqw2023/independent-book-source/main/docs/sources/comprehensive_sources_3940.json
                 </div>
                 <button class="copy-btn" onclick="copyToClipboard('comprehensive-url', this)">复制链接</button>
             </div>
-            
+
             <div class="source-card">
                 <div class="source-header">
                     <div class="source-icon">⭐</div>
@@ -335,7 +294,7 @@
                 </div>
                 <button class="copy-btn" onclick="copyToClipboard('premium-url', this)">复制链接</button>
             </div>
-            
+
             <div class="source-card">
                 <div class="source-header">
                     <div class="source-icon">🌸</div>
@@ -355,7 +314,7 @@
                 </div>
                 <button class="copy-btn" onclick="copyToClipboard('jjwxc-url', this)">复制链接</button>
             </div>
-            
+
             <div class="source-card">
                 <div class="source-header">
                     <div class="source-icon">🍅</div>
@@ -375,7 +334,47 @@
                 </div>
                 <button class="copy-btn" onclick="copyToClipboard('fanqie-url', this)">复制链接</button>
             </div>
-            
+
+            <div class="source-card">
+                <div class="source-header">
+                    <div class="source-icon">💎</div>
+                    <div class="source-title">XIU2精品书源</div>
+                </div>
+                <div class="source-description">
+                    XIU2大神精选的31个高质量书源，经过严格测试，稳定性和速度都有保障。
+                </div>
+                <div class="source-features">
+                    <span class="feature-tag">31个精品</span>
+                    <span class="feature-tag">XIU2出品</span>
+                    <span class="feature-tag">稳定快速</span>
+                    <span class="feature-tag">质量保证</span>
+                </div>
+                <div class="source-url" id="xiu2-url">
+                    https://raw.githubusercontent.com/renqw2023/independent-book-source/main/docs/sources/aoaostar_sources/xiu2_premium_31.json
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('xiu2-url', this)">复制链接</button>
+            </div>
+
+            <div class="source-card">
+                <div class="source-header">
+                    <div class="source-icon">🧊</div>
+                    <div class="source-title">破冰书源合集</div>
+                </div>
+                <div class="source-description">
+                    破冰团队维护的128个书源，涵盖各大主流小说网站，更新及时。
+                </div>
+                <div class="source-features">
+                    <span class="feature-tag">128个书源</span>
+                    <span class="feature-tag">破冰出品</span>
+                    <span class="feature-tag">主流网站</span>
+                    <span class="feature-tag">更新及时</span>
+                </div>
+                <div class="source-url" id="pobing-url">
+                    https://raw.githubusercontent.com/renqw2023/independent-book-source/main/docs/sources/aoaostar_sources/pobing_128.json
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('pobing-url', this)">复制链接</button>
+            </div>
+
             <div class="source-card">
                 <div class="source-header">
                     <div class="source-icon">📚</div>
@@ -396,22 +395,65 @@
                 <button class="copy-btn" onclick="copyToClipboard('basic-url', this)">复制链接</button>
             </div>
         </div>
-        
+
+        <!-- 添加移动版和API链接 -->
+        <div class="sources-grid" style="margin-top: 40px;">
+            <div class="source-card">
+                <div class="source-header">
+                    <div class="source-icon">📱</div>
+                    <div class="source-title">移动版界面</div>
+                </div>
+                <div class="source-description">
+                    专为手机优化的移动版界面，操作更便捷，适合在手机上使用。
+                </div>
+                <div class="source-features">
+                    <span class="feature-tag">手机优化</span>
+                    <span class="feature-tag">操作便捷</span>
+                    <span class="feature-tag">响应式设计</span>
+                </div>
+                <div class="source-url" id="mobile-url">
+                    https://renqw2023.github.io/independent-book-source/mobile.html
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('mobile-url', this)">复制链接</button>
+            </div>
+
+            <div class="source-card">
+                <div class="source-header">
+                    <div class="source-icon">🔌</div>
+                    <div class="source-title">API接口</div>
+                </div>
+                <div class="source-description">
+                    提供JSON格式的API接口，包含所有书源信息，方便开发者集成使用。
+                </div>
+                <div class="source-features">
+                    <span class="feature-tag">JSON格式</span>
+                    <span class="feature-tag">开发友好</span>
+                    <span class="feature-tag">实时更新</span>
+                </div>
+                <div class="source-url" id="api-url">
+                    https://renqw2023.github.io/independent-book-source/api/sources.json
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('api-url', this)">复制链接</button>
+            </div>
+        </div>
+
         <div class="footer">
             <p>🎉 项目开源地址：<a href="https://github.com/renqw2023/independent-book-source" style="color: white;">GitHub</a></p>
+            <p>📱 <a href="https://renqw2023.github.io/independent-book-source/mobile.html" style="color: white;">移动版</a> | 🔌 <a href="https://renqw2023.github.io/independent-book-source/api/sources.json" style="color: white;">API接口</a></p>
+            <p>👨‍💻 作者QQ：<a href="tencent://message/?uin=1576186341" style="color: white;">1576186341</a></p>
             <p>⭐ 如果对您有帮助，请给个Star支持一下！</p>
         </div>
     </div>
-    
+
     <script>
         function copyToClipboard(elementId, button) {
             const element = document.getElementById(elementId);
             const text = element.textContent;
-            
+
             navigator.clipboard.writeText(text).then(function() {
                 button.textContent = '已复制!';
                 button.classList.add('copied');
-                
+
                 setTimeout(function() {
                     button.textContent = '复制链接';
                     button.classList.remove('copied');
@@ -425,10 +467,10 @@
                 textArea.select();
                 document.execCommand('copy');
                 document.body.removeChild(textArea);
-                
+
                 button.textContent = '已复制!';
                 button.classList.add('copied');
-                
+
                 setTimeout(function() {
                     button.textContent = '复制链接';
                     button.classList.remove('copied');
